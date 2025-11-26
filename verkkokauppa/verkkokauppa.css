@@ -1,0 +1,238 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: red !important;
+  background: url("raul-gonzalez-escobar-ZpIskW1Tuvc-unsplash.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.site-header {
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+padding: 0.5rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 90px;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 80px;
+  width: auto;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+   display: flex;
+  align-items: center;
+  left: 40px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1d97c1;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.cart-link i {
+  margin-right: 0.4rem;
+}
+
+
+.shop-page {
+  max-width: 1200px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem 3rem;
+}
+
+
+.shop-header h1 {
+  font-size: 2rem;
+  color: #1d97c1;
+  margin-bottom: 1.5rem;
+}
+
+
+.search-wrapper {
+  position: relative;
+  max-width: 420px;
+  margin-bottom: 1.5rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b3b3b3;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.5rem;
+  border-radius: 999px;
+  border: 1px solid #d0d0d0;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #fff;
+}
+
+.search-input:focus {
+  border-color: #1d97c1;
+  box-shadow: 0 0 0 2px rgba(29,151,193,0.15);
+}
+
+
+.filters-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filters-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.filter-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.filter-checkbox input {
+  accent-color: #1d97c1;
+}
+
+.filters-right {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+
+.product-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.25rem 1.3rem 1.1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.product-card h2 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+  color: #333;
+}
+
+.product-category {
+  font-size: 0.85rem;
+  color: #1d97c1;
+  margin: 0 0 0.6rem;
+}
+
+.product-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 0.9rem;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.product-button {
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  border: none;
+  background: #1d97c1;
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.product-button:hover {
+  background: #14789c;
+  transform: translateY(-1px);
+}
+
+.site-footer {
+   background: #032021;
+    color: white;
+    text-align: center;
+    padding: 1.2rem 0;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .header-right {
+    align-self: flex-end;
+  }
+
+  .filters-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filters-right {
+    align-self: flex-end;
+  }
+}

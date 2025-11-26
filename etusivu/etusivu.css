@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #158ebe;
+  background: #fafafa;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+padding: 0.5rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 75px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+   display: flex;
+  align-items: center;
+  position: absolute;
+  left: 30px;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+}
+
+.header-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #158ebe;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  right: 50px;
+}
+
+.s{
+   color: white;
+  text-shadow: 0 0 6px black, 0 0 3px black;
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, #d6e9e0, #f9efef);
+  text-shadow: 0 0 6px rgb(255, 255, 255), 0 0 3px rgb(255, 251, 251);
+   background-size: 50px 50px;
+  border-bottom-left-radius: 50% 10%;
+  border-bottom-right-radius: 50% 10%;
+  background: url("dan-meyers-IQVFVH0ajag-unsplash.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #158ebe;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 100%);
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  padding: 0.8rem 1.6rem;
+  background: #158ebe;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  
+}
+
+.steps-section {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+   text-shadow: 0 0 6px rgb(255, 255, 255), 0 0 3px rgb(255, 251, 251);
+   border-bottom-left-radius: 50% 2%;
+  border-bottom-right-radius: 50% 2%;
+  background: url("dan-meyers-IQVFVH0ajag-unsplash.jpeg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #158ebe;
+  position: relative;
+  color: rgb(6, 15, 28);;
+  position: relative;
+    overflow: hidden;
+}
+
+.steps-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 80px; 
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    pointer-events: none;
+}
+
+.steps-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.step {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+footer {
+   background: #032021;
+    color: white;
+    text-align: center;
+    padding: 1.2rem 0;
+    margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center; 
+    gap: 0.8rem;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero .btn, 
+  .shop-button {
+    position: static !important;
+    margin: 0 auto;
+  }
+}
+
