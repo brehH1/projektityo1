@@ -33,5 +33,5 @@
 
 - Ostoskorin oikeassa reunassa on yhteyden otto täyttö lomake.
 
-## jos haluat takaisin etusivulle, logo painikkeesta tia -etusivulle painikkeesta pääset takaisin sinne
+## jos haluat takaisin etusivulle. Klikkaa logoa tai etusivulle painikketta niin pääset takaisin sinne
 

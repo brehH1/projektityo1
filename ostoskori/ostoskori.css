@@ -3,6 +3,8 @@ body {
     background: #f5f7f7;
     color: #333;
     font-family: "Raleway", Arial, sans-serif;
+           display: flex;
+    flex-direction: column;
 }
 
 .site-header {
@@ -11,7 +13,6 @@ body {
     align-items: center;
     padding: 1rem 2rem;
     background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     height: 60px;
 }
 
@@ -46,6 +47,7 @@ body {
     font-size: 2rem;
     color: #1d97c1;
     margin-bottom: 2rem;
+    text-shadow: 0 4px 4px rgb(80, 80, 80);
 }
 
 .cart-layout {
@@ -164,7 +166,7 @@ body {
 }
 
 .site-footer {
-    background: #032021;
+   background: #032021;
     color: white;
     text-align: center;
     padding: 1.2rem 0;

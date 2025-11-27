@@ -85,6 +85,7 @@ padding: 0.5rem 2rem;
   position: relative;
   max-width: 420px;
   margin-bottom: 1.5rem;
+
 }
 
 .search-icon {
@@ -103,6 +104,8 @@ padding: 0.5rem 2rem;
   font-size: 0.95rem;
   outline: none;
   background-color: #fff;
+     background: rgba(0,0,0,0.50);
+    color: white;
 }
 
 .search-input:focus {
@@ -160,12 +163,14 @@ padding: 0.5rem 2rem;
   flex-direction: column;
   justify-content: space-between;
   min-height: 180px;
+   background: rgba(0,0,0,0.50);
+    color: white;
 }
 
 .product-card h2 {
   font-size: 1rem;
   margin: 0 0 0.25rem;
-  color: #333;
+  color: #ffffff;
 }
 
 .product-category {
@@ -176,7 +181,7 @@ padding: 0.5rem 2rem;
 
 .product-description {
   font-size: 0.85rem;
-  color: #666;
+  color: #ffffff;
   margin: 0 0 0.9rem;
 }
 
