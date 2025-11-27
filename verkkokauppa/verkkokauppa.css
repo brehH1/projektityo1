@@ -5,14 +5,14 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   color: #333;
   background-color: red !important;
-  background: url("raul-gonzalez-escobar-ZpIskW1Tuvc-unsplash.jpeg");
+  background: url("anastasiia-chepinska-Ulc1xfi4O7U-unsplash.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  font-family: "Raleway", Arial, sans-serif;
 }
 
 .site-header {
@@ -235,4 +235,11 @@ padding: 0.5rem 2rem;
   .filters-right {
     align-self: flex-end;
   }
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }

@@ -1,6 +1,16 @@
 <?php
-require_once '../db.php';
-require_once '../cart.php';
+session_start();
+
+require_once __DIR__ . '/../db.php';
+require_once __DIR__ . '/../cart.php';
+
+if (isset($_GET['remove'])) {
+    $removeId = intval($_GET['remove']);
+    cart_remove($removeId);
+
+    header("Location: ostoskori.php");
+    exit;
+}
 
 $cartItems = cart_get_items();
 $products = [];
@@ -8,8 +18,8 @@ $total = 0.0;
 
 if (!empty($cartItems)) {
     $ids = array_keys($cartItems);
-    $placeholders = implode(',', array_fill(0, count($ids), '?'));
-    $types = str_repeat('i', count($ids));
+    $placeholders = implode(",", array_fill(0, count($ids), '?'));
+    $types = str_repeat("i", count($ids));
 
     $stmt = $mysqli->prepare("
         SELECT id, name, prize, category_id
@@ -18,13 +28,15 @@ if (!empty($cartItems)) {
     ");
     $stmt->bind_param($types, ...$ids);
     $stmt->execute();
-    $result = $stmt->get_result();
 
+    $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) {
         $pid = $row['id'];
         $qty = $cartItems[$pid];
+
         $row['qty'] = $qty;
         $row['line_total'] = $qty * (float)$row['prize'];
+
         $products[] = $row;
         $total += $row['line_total'];
     }
@@ -36,12 +48,28 @@ if (!empty($cartItems)) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ostoskori – Tuottajamarket</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="ostoskori.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
-   body { background: url("dan-meyers-IQVFVH0ajag-unsplash.jpeg"); }
-</style>
+        body {
+            background: url("dan-meyers-IQVFVH0ajag-unsplash.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+        .delete-link {
+            font-size: 22px;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .delete-link:hover {
+            color: #ff4444;
+        }
+    </style>
 </head>
+
 <body>
 
 <header class="site-header">
@@ -67,8 +95,8 @@ if (!empty($cartItems)) {
         <section class="cart-items">
 
             <?php if (empty($products)): ?>
-                <p>Ostoskori on tyhjä.</p>
 
+                <p>Ostoskori on tyhjä.</p>
                 <a href="../verkkokauppa/verkkokauppa.php" class="back-link">
                     <i class="fa-solid fa-angle-left"></i> Takaisin kauppaan
                 </a>
@@ -77,17 +105,18 @@ if (!empty($cartItems)) {
 
                 <?php foreach ($products as $item): ?>
                     <article class="cart-item">
+
                         <div class="cart-item-left">
-                            <form method="post" action="">
-                                <button type="submit" name="remove" value="<?= $item['id'] ?>" class="delete-btn">
-                                    <i class="fa-solid fa-trash delete-icon"></i>
-                                </button>
-                            </form>
+
+                            <a href="ostoskori.php?remove=<?= $item['id'] ?>" class="delete-link">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
 
                             <div>
                                 <h2><?= htmlspecialchars($item['name']) ?></h2>
                                 <p class="product-category">Luokka <?= $item['category_id'] ?></p>
                             </div>
+
                         </div>
 
                         <div class="cart-item-right">
@@ -96,6 +125,7 @@ if (!empty($cartItems)) {
                                 <?= number_format($item['line_total'], 2, ',', '') ?>€
                             </span>
                         </div>
+
                     </article>
                 <?php endforeach; ?>
 
@@ -115,11 +145,9 @@ if (!empty($cartItems)) {
         </section>
 
         <section class="checkout-box">
-         
-            <input type placeholder="Nimi">
-            <input type placeholder="Sähköpostiosoite">
-            <input type placeholder="Puhelinnumero">
-
+            <input type="text" placeholder="Nimi">
+            <input type="email" placeholder="Sähköpostiosoite">
+            <input type="tel" placeholder="Puhelinnumero">
 
             <button class="order-button">
                 Tee tilaus <i class="fa-solid fa-angle-right"></i>
@@ -130,7 +158,7 @@ if (!empty($cartItems)) {
 </main>
 
 <footer class="site-footer">
-    © 2025 Veeti Virtanen — Viitaniemi Gradia
+    © 2025 Veeti Virtanen – Viitaniemi Gradia
 </footer>
 
 </body>

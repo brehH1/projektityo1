@@ -1,5 +1,4 @@
 <?php
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -15,20 +14,10 @@ function cart_add(int $productId, int $amount = 1): void {
     $_SESSION['cart'][$productId] += max(1, $amount);
 }
 
-function cart_set(int $productId, int $amount): void {
-    if ($amount <= 0) {
-        unset($_SESSION['cart'][$productId]);
-    } else {
-        $_SESSION['cart'][$productId] = $amount;
-    }
-}
-
 function cart_remove(int $productId): void {
-    unset($_SESSION['cart'][$productId]);
-}
-
-function cart_clear(): void {
-    $_SESSION['cart'] = [];
+    if (isset($_SESSION['cart'][$productId])) {
+        unset($_SESSION['cart'][$productId]);
+    }
 }
 
 function cart_get_items(): array {

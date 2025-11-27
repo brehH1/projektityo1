@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   color: #158ebe;
   background: #fafafa;
+  font-family: "Raleway", Arial, sans-serif;
 }
 
 header {
@@ -196,3 +196,9 @@ footer {
   }
 }
 
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}

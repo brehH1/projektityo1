@@ -52,7 +52,7 @@ $cartCount = cart_get_count();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="verkkokauppa.css" />
   <style>
-   body { background: url("tim-mossholder-xDwEa2kaeJA-unsplash.jpeg"); }
+   body { background: url("raphael-rychetsky-li9JfUHQfOY-unsplash.jpeg"); }
 </style>
 
 </head>
