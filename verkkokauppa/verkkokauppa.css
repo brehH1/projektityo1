@@ -50,6 +50,7 @@ padding: 0.5rem 2rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  top:0;
 }
 
 .nav-link {
@@ -221,7 +222,7 @@ padding: 0.5rem 2rem;
     margin-top: 3rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 300px) {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
